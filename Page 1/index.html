@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Charater Gallery</title>
+</head>
+
+<body class = "Page-wrapper">
+<header>
+    <h1>Character Gallery</h1>
+</header>
+
+<form id = "characterForm">
+    <label for = "type">Type:</label>
+    <input type="text" id = "type" name = "type" placeholder = "Choose type">
+    <label for = "type">Name:</label>
+    <input type="text" id = "name" name = "name">
+    <label for = "type">Description:</label>
+    <input type="text" id = "description" name = "description" rows="4 ">
+    <label for = "type">Image:</label>
+    <input type="url" id = "image" name = "image" placeholder = "http://imagename/image.jpg">
+
+    <button type = "submit">Add Character</button>
+</form>
+
+<div class="card">
+    <img src="./images/dravok.png" alt="dravok image">
+    <h3 class="imgtxt">Dravok Dragon</h3>
+    <p class="imgtxt">The great and powerful</p>
+</div>
+
+<div class="card">
+    <img src="./images/obon.png" alt="Obon image">
+    <h3 class="imgtxt">Obon Dragon</h3>
+    <p class="imgtxt">Obon the Dragon born</p>
+</div>
+
+    <script src="./gallery.js"></script>
+</body>
+</html>
