@@ -35,14 +35,16 @@ input{
     justify-content: center;
     background-color: bisque;
     width: 800px;
-    height: 20px;
+    font-size: 14px;
     border-radius: 4px;
     margin: 10px;
+    padding: 8px;
 }
 
 #description {
     height: 30px;
 }
+
 
 button{
     background-color: #ffcc02;
@@ -55,11 +57,18 @@ button{
     width: 150px;
 }
 
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px black);
+}
+
 .imgblock{
     display: flex;
     margin-top: 50px;
+    justify-content: center;
     
 }
+
 
 .card{
     display: flex;
@@ -72,6 +81,11 @@ button{
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px black;
 }
 
 img{
@@ -95,3 +109,64 @@ img{
 p{
 margin-bottom: 40px;
 }
+
+/*---Page 2---*/
+
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.itemdetail{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: bisque;
+    margin: 10px;
+    width:500px;
+
+}
+
+.dragonitems{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: bisque;
+    padding: 10px;
+    border-radius: 10px;
+    width: 500px;
+    margin-top: 10px;
+    padding: 15px;
+    align-content: center;
+   
+    
+}
+
+h2{
+    background-color: bisque;
+    margin: 20px;
+    
+}
+
+ul{
+    background-color: bisque;
+}
+
+ul li{
+    background-color: bisque;
+}
+
+
+.input2{
+    width: 400px;
+}
+
+.label2{
+    background-color: bisque;
+    color: black;
+
+}
+
+
