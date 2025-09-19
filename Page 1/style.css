@@ -21,7 +21,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+      
 }
 
 label{
@@ -40,6 +40,10 @@ input{
     margin: 10px;
 }
 
+#description {
+    height: 30px;
+}
+
 button{
     background-color: #ffcc02;
     border-radius: 10px;
@@ -51,6 +55,12 @@ button{
     width: 150px;
 }
 
+.imgblock{
+    display: flex;
+    margin-top: 50px;
+    
+}
+
 .card{
     display: flex;
     flex-direction: column;
@@ -60,7 +70,6 @@ button{
     height: 250px;
     background-color: #ffcc02;
     border-radius: 20px;
-    position: relative;
     padding: 10px;
     margin: 10px;
 }
