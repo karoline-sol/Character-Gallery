@@ -1,0 +1,209 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: rgb(121, 121, 121)
+}
+
+.Page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+header{
+    text-align: center;
+    color: #ffcc02;
+}
+
+.characterForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 800px;
+      
+}
+
+label{
+    display: block;
+    color: #ffcc02;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 20px;
+   
+    
+}
+
+
+
+.input{
+    display:block;
+    background-color: bisque;
+    width:800px;
+    height:40px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+
+#description {
+    display:block;
+    background-color: bisque;
+    width:800px;
+    height: 45px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+button{
+    background-color: #ffcc02;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 150px;
+}
+
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px black;
+}
+
+#gallery{
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    
+}
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 300px;
+    background-color: #ffcc02;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px yellow;
+}
+
+img{
+    display:block;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.imgtxt{
+    text-align: center;
+    background-color: #ffcc02;
+    
+}
+
+p{
+margin-bottom: 40px;
+background-color: #ffcc02;
+}
+
+h3{
+    background-color: #ffcc02;
+}
+
+/*---Page 2---*/
+
+.imgblock{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.itemdetail{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: bisque;
+    margin: 10px;
+    width:500px;
+
+}
+
+#dragonItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: bisque;
+    padding: 10px;
+    border-radius: 10px;
+    width: 500px;
+    margin-top: 10px;
+    padding: 15px;
+    align-content: center;
+   
+    
+}
+
+h2{
+    background-color: bisque;
+    margin: 20px;
+    
+}
+
+ul{
+    background-color: bisque;
+}
+
+ul li{
+    background-color: bisque;
+}
+
+
+.input2{
+    display:block;
+    width: 400px;
+    background-color:white;
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 8px;
+
+}
+
+.label2{
+    background-color: bisque;
+    color: black;
+
+}
+
+
