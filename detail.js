@@ -1,73 +1,64 @@
-// Find elements
-function findElements() { 
-  const dragonItems = document.getElementById("dragonItems");
-  const itemType = document.getElementById("itemType");
-  const itemName = document.getElementById("itemName");
-  const addItemBtn = document.getElementById("addItem");
+// add item function click handler
 
-  let bag = {
-    item: itemType.value;
-    Name: itemName.value;
-  };
+function addItemToCurrentCharacterBagAndSaveToLocalStorage(charKlass, currentIndex, characters) {
+  let form = document.querySelector('.itemdetail');
+  let itemName = form.querySelector('#itemName').value;
+  let itemType = form.querySelector('#itemType').value;
+
+  charKlass.addItem({itemName, itemType});
+
+  let toStore = charKlass.valueForStorage;
+  characters[currentIndex] = toStore;
+  localStorage.setItem("characters", JSON.stringify(characters));
+  renderBagList(charKlass);
+  form.reset();
+}
+
+
+function renderBagList(charKlass) {
+  let bagList = document.getElementById('bag-list');
+  bagList.innerHTML = ""
+  charKlass.bag.forEach((item) => {
+    console.log(item);
+    // build the li 
+    const li = document.createElement('li');
+    li.innerHTML = `ItemName: ${item.itemName} - ItemType: ${item.itemType}`;
+
+    bagList.appendChild(li);
+  })
+}
+
+// on document load 
+document.addEventListener('DOMContentLoaded', () => {
+  // find the current character
+  let currentIndex = localStorage.getItem("currentCharacterIndex")
+  let characters = JSON.parse(localStorage.getItem("characters") || "[]");
+  if (!currentIndex || !characters || currentIndex < 0) {
+    window.location.href = "index.html"
+    return;
+  } 
+    
   
-  // Load existing items from localStorage
-  let items = JSON.parse(localStorage.getItem("bag")) || [];
 
-  // Function to display items in bag
-  function displayItems() {
-    dragonItems.innerHTML = "";
-    if (items.length === 0) {
-      dragonItems.innerHTML = "<p>No items in bag</p>";
-      return;
-    }
-    const ul = document.createElement("ul");
-    items.forEach((item, index) => {
-      const li = document.createElement("li");
-      li.textContent = `${item.type}: ${item.name}`;
-      ul.appendChild(li);
-    });
-    bag.appendChild(ul);
-  }
+  let currentCharacter = characters[currentIndex];
 
-  // Add item on click
-  addItemBtn.addEventListener("click", () => {
-    const type = itemType.value;
-    const name = itemName.value.trim();
+  // add character card to detail page 
+  // using a character class instance 
+  const charKlass = new Character(
+    currentCharacter.name, 
+    currentCharacter.type,
+    currentCharacter.image_src,
+    currentCharacter.description,
+    currentCharacter.bag || []
+  )
 
-    if (!type || !name) {
-      alert("Please select a type and enter a name.");
-      return;
-    }
+  let parent = document.querySelector('.imgblock');
+  charKlass.buildCard(parent);
+  renderBagList(charKlass);
 
-    // Add new item
-    items.push(({ type, name}));
-
-    // Save to localStorage
-    localStorage.setItem("bag", JSON.stringify(items));
-
-    // Clear input fields
-    itemType.value = "";
-    itemName.value = "";
-
-    // Re-render items
-    displayItems();
-  });
-
-  // dom content loaded listener like in gallery
-document.addEventListener("DOMContentLoaded", () => {
-  // onload of document load my characters from local Storage and render them
-
-    if (!localStorage.getItem("bag")) {
-        localStorage.setItem("bag", JSON.stringify([]))
-    }
-    let bag = JSON.parse(localStorage.getItem("bag") || '[]')
-
-  // Initial display on page load
-  displayItems();
+  // on click for the bag items 
+  let addBtn = document.getElementById('addItem');
+  addBtn.addEventListener('click', () => {
+    addItemToCurrentCharacterBagAndSaveToLocalStorage(charKlass, currentIndex, characters);
+  })
 });
-
-};
-
-
-// inside it's callback function - need to select the character based on the local storage selected character index
-

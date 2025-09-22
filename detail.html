@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <header>
-        <h1>Character Detail</h1>
+      <h1>Character Detail</h1>
     </header>
-   
-   
-<section class="imgblock">
-    <div class="card">
-        <img src="./assets/images/neraxis.png" alt="neraxis image">
-        <h3 class="imgtxt">Neraxis Dragon</h3>
-        <p class="imgtxt">Master of the Dark Forces</p>
-    </div>
-</section>
 
-<section class="container">
-    <div id="dragonItems">
-    <h2>Bag</h2>
-    <ul>
-      <li>No items in bag</li>
-    </ul>
+    <section class="imgblock">
+      <!-- <div class="card">
+					<img src="./assets/images/neraxis.png" alt="neraxis image">
+					<h3 class="imgtxt">Neraxis Dragon</h3>
+					<p class="imgtxt">Master of the Dark Forces</p>
+			</div> -->
+    </section>
 
+    <section class="container">
+      <div id="bag">
+        <h2>Bag</h2>
+        <ul id="bag-list">
+          <li>No items in bag</li>
+        </ul>
 
-<form class="itemdetail">
-    <label class="label2" for="type">Item Type:</label>
-     <select class="input2" type="text" id = "itemType" name = "item type" placeholder = "Choose type">
-        <option value="Choose type">Choose type</option>
-        <option value="Rune">Rune</option>
-        <option value="Weapon">Weapon</option>
-        <option value="Potion">Potion</option>
-     </select>
-    <label class="label2" for="item name">Item Name:</label>
-     <input class="input2" type="text" id = "itemName" name = "item name" placeholder = "e.g. Rune of Fire">
+        <form class="itemdetail">
+          <label class="label2" for="type">Item Type:</label>
+          <select
+            class="input2"
+            type="text"
+            id="itemType"
+            name="item type"
+            placeholder="Choose type"
+          >
+            <option value="Choose type">Choose type</option>
+            <option value="Rune">Rune</option>
+            <option value="Weapon">Weapon</option>
+            <option value="Potion">Potion</option>
+          </select>
+          <label class="label2" for="item name">Item Name:</label>
+          <input
+            class="input2"
+            type="text"
+            id="itemName"
+            name="item name"
+            placeholder="e.g. Rune of Fire"
+          />
 
-     <button id="addItem" type="submit">Add Item</button>
-</form>
-    </div>
-</section>
-<script src="detail.js"></script>
-</body>
+          <button id="addItem" type="submit">Add Item</button>
+        </form>
+      </div>
+    </section>
+
+ 
+    <script src="detail.js"></script>
+  </body>
 </html>

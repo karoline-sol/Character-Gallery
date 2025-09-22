@@ -158,7 +158,7 @@ h3{
 
 }
 
-#dragonItems{
+#bag{
     display: flex;
     flex-direction: column;
     justify-content: center;

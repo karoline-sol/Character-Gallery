@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Charater Gallery</title>
-</head>
+  </head>
 
-<body class = "Page-wrapper">
-<header>
-    <h1>Character Gallery</h1>
-</header>
+  <body class="Page-wrapper">
+    <header>
+      <h1>Character Gallery</h1>
+    </header>
 
-<form id = "characterForm">
-    <label for = "type">Type:</label>
-    <select class="input" id="type" name="type" placeholder="Choose type">
+    <form id="characterForm">
+      <label for="type">Type:</label>
+      <select class="input" id="type" name="type" placeholder="Choose type">
         <option value="Choose type">Choose type</option>
         <option value="Dragon">Dragon</option>
         <option vale="Human">Human</option>
-    </select>
-    <label for = "name">Name:</label>
-    <input class="input" type="text" id="name" name = "name">
-    <label for = "description">Description:</label>
-    <input type="text" id = "description" name = "description">
-    <label for = "image">Image:</label>
-    <input class="input" type="text" id = "image" name = "image" placeholder = "http://example.com/image.png">
+      </select>
+      <label for="name">Name:</label>
+      <input class="input" type="text" id="name" name="name" />
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" />
+      <label for="image">Image:</label>
+      <input
+        class="input"
+        type="text"
+        id="image"
+        name="image"
+        placeholder="http://example.com/image.png"
+      />
 
-    <button id="addBtn" type = "submit">Add Character</button>
-</form>
+      <button id="addBtn" type="submit">Add Character</button>
+    </form>
 
-<section id="gallery">
-<div class="card">
+    <section id="gallery">
+      <!-- <div class="card">
     <img src="./images/dravok.png" alt="dravok image">
     <h3 class="imgtxt">Dravok Dragon</h3>
     <p class="imgtxt">The great and powerful</p>
@@ -40,8 +46,9 @@
     <img src="./images/obon.png" alt="Obon image">
     <h3 class="imgtxt">Obon Dragon</h3>
     <p class="imgtxt">Obon the Dragon born</p>
-</div>
-</section>
+</div> -->
+    </section>
+    
     <script src="./gallery.js"></script>
-</body>
+  </body>
 </html>
