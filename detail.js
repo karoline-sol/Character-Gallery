@@ -1,64 +1,49 @@
-// add item function click handler
+// Get elements
+const bagList = document.getElementById("bag");
+const form = document.querySelector(".itemdetail");
 
-function addItemToCurrentCharacterBagAndSaveToLocalStorage(charKlass, currentIndex, characters) {
-  let form = document.querySelector('.itemdetail');
-  let itemName = form.querySelector('#itemName').value;
-  let itemType = form.querySelector('#itemType').value;
+// Load characters and selected one
+let characters = JSON.parse(localStorage.getItem("characters")) || [];
+let selectedIndex = localStorage.getItem("selectedCharacter");
 
-  charKlass.addItem({itemName, itemType});
-
-  let toStore = charKlass.valueForStorage;
-  characters[currentIndex] = toStore;
-  localStorage.setItem("characters", JSON.stringify(characters));
-  renderBagList(charKlass);
-  form.reset();
+if (selectedIndex !== null && characters[selectedIndex]) {
+  const char = characters[selectedIndex];
+  // Show character info
+  document.querySelector(".imgblock").innerHTML = `
+    <div class="card">
+      <img src="${char.image}" alt="${char.name}">
+      <h3>${char.name}</h3>
+      <p>${char.description}</p>
+    </div>
+  `;
 }
 
-
-function renderBagList(charKlass) {
-  let bagList = document.getElementById('bag-list');
-  bagList.innerHTML = ""
-  charKlass.bag.forEach((item) => {
-    console.log(item);
-    // build the li 
-    const li = document.createElement('li');
-    li.innerHTML = `ItemName: ${item.itemName} - ItemType: ${item.itemType}`;
-
-    bagList.appendChild(li);
-  })
+function updateBag () {
+  if (bag.children.length === 0) {
+    const li = document.createElement("li");
+    li.textConent = "No items in bag";
+    bag.appendChild(li);
+    }
 }
 
-// on document load 
-document.addEventListener('DOMContentLoaded', () => {
-  // find the current character
-  let currentIndex = localStorage.getItem("currentCharacterIndex")
-  let characters = JSON.parse(localStorage.getItem("characters") || "[]");
-  if (!currentIndex || !characters || currentIndex < 0) {
-    window.location.href = "index.html"
-    return;
-  } 
-    
+// Handle adding item to bag
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+if (bag.firstChild && bag.firstChild.textContent === "No items in bag") {
+  bag.innerHTML = "";
+}
+
+  const type = form.itemType.value;
+  const name = form.itemName.value;
+
+  const li = document.createElement("li");
+  li.textContent = `${type}: ${name}`;
+
   
+  bag.appendChild(li);
 
-  let currentCharacter = characters[currentIndex];
-
-  // add character card to detail page 
-  // using a character class instance 
-  const charKlass = new Character(
-    currentCharacter.name, 
-    currentCharacter.type,
-    currentCharacter.image_src,
-    currentCharacter.description,
-    currentCharacter.bag || []
-  )
-
-  let parent = document.querySelector('.imgblock');
-  charKlass.buildCard(parent);
-  renderBagList(charKlass);
-
-  // on click for the bag items 
-  let addBtn = document.getElementById('addItem');
-  addBtn.addEventListener('click', () => {
-    addItemToCurrentCharacterBagAndSaveToLocalStorage(charKlass, currentIndex, characters);
-  })
+  form.reset();
 });
+
+updateBag();
