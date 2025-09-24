@@ -173,6 +173,11 @@ h3{
     
 }
 
+#baglist{
+    background-color: bisque;
+    list-style-type: none;
+}
+
 h2{
     background-color: bisque;
     margin: 20px;

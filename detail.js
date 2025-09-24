@@ -1,5 +1,5 @@
 // Get elements
-const bagList = document.getElementById("bag");
+const bagList = document.getElementById("baglist");
 const form = document.querySelector(".itemdetail");
 
 // Load characters and selected one
@@ -19,10 +19,10 @@ if (selectedIndex !== null && characters[selectedIndex]) {
 }
 
 function updateBag () {
-  if (bag.children.length === 0) {
+  if (baglist.children.length === 0) {
     const li = document.createElement("li");
     li.textConent = "No items in bag";
-    bag.appendChild(li);
+    baglist.appendChild(li);
     }
 }
 
@@ -30,7 +30,7 @@ function updateBag () {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-if (bag.firstChild && bag.firstChild.textContent === "No items in bag") {
+if (baglist.firstChild && baglist.firstChild.textContent === "No items in bag") {
   bag.innerHTML = "";
 }
 
@@ -41,7 +41,7 @@ if (bag.firstChild && bag.firstChild.textContent === "No items in bag") {
   li.textContent = `${type}: ${name}`;
 
   
-  bag.appendChild(li);
+  baglist.appendChild(li);
 
   form.reset();
 });
