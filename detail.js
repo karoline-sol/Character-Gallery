@@ -21,7 +21,7 @@ if (selectedIndex !== null && characters[selectedIndex]) {
 function updateBag () {
   if (baglist.children.length === 0) {
     const li = document.createElement("li");
-    li.textConent = "No items in bag";
+    
     baglist.appendChild(li);
     }
 }
@@ -30,9 +30,6 @@ function updateBag () {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-if (baglist.firstChild && baglist.firstChild.textContent === "No items in bag") {
-  bag.innerHTML = "";
-}
 
   const type = form.itemType.value;
   const name = form.itemName.value;
