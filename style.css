@@ -65,7 +65,6 @@ label{
 
 button{
     display: inline-block;
-    
     background-color: #ffcc02;
     border-radius: 10px;
     border: 1px solid black;
@@ -73,8 +72,15 @@ button{
     font-size: 14px;
     font-weight: bold;
     margin-right: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 140px;
+}
+
+.button-row{
+    display: flex;
+    background-color: bisque;
+    gap: 5px;
+    margin-top: 10px;
 }
 
 button:hover{
