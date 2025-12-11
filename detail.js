@@ -1,7 +1,7 @@
 // Get elements
 const bagList = document.getElementById("baglist");
 const form = document.querySelector(".itemdetail");
-
+const clearBtn = document.getElementById("clear-btn");
 // Load characters and selected one
 let characters = JSON.parse(localStorage.getItem("characters")) || [];
 let selectedIndex = localStorage.getItem("selectedCharacter");
@@ -42,5 +42,11 @@ form.addEventListener("submit", (e) => {
 
   form.reset();
 });
+
+//Clear all items
+clearBtn.addEventListener("click", () => {
+  bagList.innerHTML = "";
+  updateBag();
+})
 
 updateBag();
